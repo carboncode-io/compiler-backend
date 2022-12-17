@@ -116,9 +116,6 @@ RUN git clone git://github.com/Portatolova/stderred.git
 RUN mv /stderred /err
 RUN cd /err; make
 
-# Setup custom python compilers
-COPY tmp /tmp/
-RUN cd /tmp; make; mv /bin/python3.9 /bin/python3.9-bin; mv /bin/python2.7 /bin/python2.7-bin; mv /tmp/python3.9 /bin/python3.9; mv /tmp/python2.7 /bin/python2.7;
 
 # Set Locale to support Chinese/Japanese characters
 RUN apt-get install -y locales
